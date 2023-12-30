@@ -29,7 +29,7 @@ const company = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             else {
                 if (verifiedPassword) {
                     let secretKey = process.env.SECRET_KEY;
-                    let token = (0, generate_token_1.default)({ role: "company", email: email_company, id_company }, secretKey, new Date().getTime() + (2 * 60 * 1000));
+                    let token = (0, generate_token_1.default)({ role: "company", email: email_company, id: id_company }, secretKey, new Date().getTime() + (2 * 60 * 1000));
                     return res.status(200).json({ status: 'Successful authentication', token: token });
                 }
                 else {
@@ -60,7 +60,7 @@ const provider = (req, res) => {
             else {
                 if (verifiedPassword) {
                     let secretKey = process.env.SECRET_KEY;
-                    let token = (0, generate_token_1.default)({ role: "company", email: email_provider, id_provider }, secretKey, new Date().getTime() + (2 * 60 * 1000));
+                    let token = (0, generate_token_1.default)({ role: "provider", email: email_provider, id: id_provider }, secretKey, new Date().getTime() + (2 * 60 * 1000));
                     return res.status(200).json({ status: 'Successful authentication', token: token });
                 }
                 else {
@@ -91,7 +91,7 @@ const grocer = (req, res) => {
             else {
                 if (verifiedPassword) {
                     let secretKey = process.env.SECRET_KEY;
-                    let token = (0, generate_token_1.default)({ role: "company", email: email_grocer, id_grocer }, secretKey, new Date().getTime() + (2 * 60 * 1000));
+                    let token = (0, generate_token_1.default)({ role: "grocer", email: email_grocer, id: id_grocer }, secretKey, new Date().getTime() + (2 * 60 * 1000));
                     return res.status(200).json({ status: 'Successful authentication', token: token });
                 }
                 else {

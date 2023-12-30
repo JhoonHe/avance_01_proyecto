@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const db_config_1 = __importDefault(require("../config/db-config"));
 const compare_password_1 = __importDefault(require("../helpers/compare-password"));
 const loginCompany = (data, callback) => {
-    const getCompanyQuery = 'call get_data_company(?);';
+    const getCompanyQuery = 'call  get_data_profile_company(?);';
     try {
         db_config_1.default.query(getCompanyQuery, [data.email_company], (error, results) => {
             if (error) {

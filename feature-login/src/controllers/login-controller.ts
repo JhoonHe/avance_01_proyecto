@@ -18,7 +18,7 @@ export const company = async (req: Request, res: Response) => {
                 if (verifiedPassword) {
                     let secretKey: any = process.env.SECRET_KEY;
                     let token: any = generateToken(
-                        { role: "company", email: email_company, id_company },
+                        { role: "company", email: email_company, id: id_company },
                         secretKey, new Date().getTime() + (2 * 60 * 1000)
                     )
                     return res.status(200).json({ status: 'Successful authentication', token: token });
@@ -52,7 +52,7 @@ export const provider = (req: Request, res: Response) => {
                 if (verifiedPassword) {
                     let secretKey: any = process.env.SECRET_KEY;
                     let token: any = generateToken(
-                        { role: "company", email: email_provider, id_provider },
+                        { role: "provider", email: email_provider, id: id_provider },
                         secretKey, new Date().getTime() + (2 * 60 * 1000)
                     )
                     return res.status(200).json({ status: 'Successful authentication', token: token });
@@ -85,7 +85,7 @@ export const grocer = (req: Request, res: Response) => {
                 if (verifiedPassword) {
                     let secretKey: any = process.env.SECRET_KEY;
                     let token: any = generateToken(
-                        { role: "company", email: email_grocer, id_grocer },
+                        { role: "grocer", email: email_grocer, id: id_grocer },
                         secretKey, new Date().getTime() + (2 * 60 * 1000)
                     )
                     return res.status(200).json({ status: 'Successful authentication', token: token });
